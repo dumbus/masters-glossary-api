@@ -1,6 +1,7 @@
 export interface Term {
   id: number;
-  name: string;
+  term: string;
+  description: string;
 }
 
 export const terms: Term[] = [];

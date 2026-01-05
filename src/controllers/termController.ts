@@ -5,9 +5,9 @@ import { terms, Term } from '../models/term';
 // Create term
 export const createTerm = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { name } = req.body;
+    const { term, description } = req.body;
 
-    const newItem: Term = { id: Date.now(), name };
+    const newItem: Term = { id: Date.now(), term, description };
     terms.push(newItem);
 
     res.status(201).json(newItem);
@@ -50,7 +50,7 @@ export const getTermById = (
 export const updateTerm = (req: Request, res: Response, next: NextFunction) => {
   try {
     const id = parseInt(req.params.id, 10);
-    const { name } = req.body;
+    const { term, description } = req.body;
 
     const termIndex = terms.findIndex((t) => t.id === id);
 
@@ -58,7 +58,12 @@ export const updateTerm = (req: Request, res: Response, next: NextFunction) => {
       res.status(404).json({ message: 'Term not found' });
       return;
     }
-    terms[termIndex].name = name;
+    if (term !== undefined) {
+      terms[termIndex].term = term;
+    }
+    if (description !== undefined) {
+      terms[termIndex].description = description;
+    }
 
     res.json(terms[termIndex]);
   } catch (error) {
