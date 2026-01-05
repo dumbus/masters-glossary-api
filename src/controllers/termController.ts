@@ -7,11 +7,11 @@ export const createTerm = (req: Request, res: Response, next: NextFunction) => {
   try {
     const { term, description, relations } = req.body;
 
-    const newItem: Term = { 
-      id: Date.now(), 
-      term, 
+    const newItem: Term = {
+      id: Date.now(),
+      term,
       description,
-      relations: relations || []
+      relations: relations || [],
     };
     terms.push(newItem);
 
