@@ -1,10 +1,16 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+export interface TermRelation {
+  targetId: number;
+  relationType: string;
+}
+
 export interface Term {
   id: number;
   term: string;
   description: string;
+  relations?: TermRelation[];
 }
 
 const loadInitialTerms = (): Term[] => {
