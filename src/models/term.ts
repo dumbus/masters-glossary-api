@@ -10,7 +10,8 @@ export interface Term {
   id: number;
   term: string;
   description: string;
-  relations?: TermRelation[];
+  source: string;
+  relations: TermRelation[];
 }
 
 const loadInitialTerms = (): Term[] => {

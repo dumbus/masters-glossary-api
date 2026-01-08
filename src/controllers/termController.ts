@@ -5,12 +5,13 @@ import { terms, Term } from '../models/term';
 // Create term
 export const createTerm = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { term, description, relations } = req.body;
+    const { term, description, source, relations } = req.body;
 
     const newItem: Term = {
       id: Date.now(),
       term,
       description,
+      source,
       relations: relations || [],
     };
     terms.push(newItem);
@@ -55,7 +56,7 @@ export const getTermById = (
 export const updateTerm = (req: Request, res: Response, next: NextFunction) => {
   try {
     const id = parseInt(req.params.id, 10);
-    const { term, description, relations } = req.body;
+    const { term, description, source, relations } = req.body;
 
     const termIndex = terms.findIndex((t) => t.id === id);
 
@@ -68,6 +69,9 @@ export const updateTerm = (req: Request, res: Response, next: NextFunction) => {
     }
     if (description !== undefined) {
       terms[termIndex].description = description;
+    }
+    if (source !== undefined) {
+      terms[termIndex].source = source;
     }
     if (relations !== undefined) {
       terms[termIndex].relations = relations;
