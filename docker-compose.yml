@@ -1,0 +1,14 @@
+services:
+  glossary-api:
+    build: .
+    container_name: masters-glossary-api
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - HTTPS_ENABLED=false
+    restart: unless-stopped
+    volumes:
+      # Монтируем данные, чтобы можно было обновлять без пересборки
+      - ./src/data:/app/dist/data:ro
