@@ -1,0 +1,12 @@
+services:
+  glossary-api:
+    build: .
+    container_name: masters-glossary-api
+    ports:
+      - "127.0.0.1:8080:8080"  # Только для локального доступа (Nginx будет проксировать)
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      # Монтируем данные, чтобы можно было обновлять без пересборки
+      - ./src/data:/app/dist/data:ro

@@ -23,6 +23,5 @@ export default tseslint.config(
         ...globals.es2020,
       },
     },
-  }
+  },
 );
-

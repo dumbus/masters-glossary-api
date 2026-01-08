@@ -1,0 +1,205 @@
+[
+  {
+    "id": 1,
+    "term": "Бизнес-аналитика / Business Intelligence (BI)",
+    "description": "Совокупность процессов и инструментов, используемых для анализа корпоративных данных, извлечения из них ценных сведений и оказания помощи всем сотрудникам организации при принятии более обоснованных решений",
+    "source": "https://www.sap.com/central-asia-caucasus/products/data-cloud/cloud-analytics/what-is-business-intelligence.html",
+    "relations": [
+      { "targetId": 3, "relationType": "реализуется через" }
+    ]
+  },
+  {
+    "id": 3,
+    "term": "BI-система (BI-приложение)",
+    "description": "Система поддержки принятия решений, которая анализирует текущие и исторические данные и представляет результаты в виде понятных отчетов, информационных панелей, графиков, диаграмм и схем, которые могут совместно использовать все подразделения компании",
+    "source": "https://www.sap.com/central-asia-caucasus/products/data-cloud/cloud-analytics/what-is-business-intelligence.html",
+    "relations": [
+      { "targetId": 4, "relationType": "является" },
+      { "targetId": 5, "relationType": "использует" },
+      { "targetId": 7, "relationType": "обрабатывает" },
+      { "targetId": 10, "relationType": "характеризуется" }
+    ]
+  },
+  {
+    "id": 4,
+    "term": "Веб-приложение",
+    "description": "Программное обеспечение, которое запускается в веб-браузере",
+    "source": "https://aws.amazon.com/ru/what-is/web-application/",
+    "relations": [
+      { "targetId": 9, "relationType": "характеризуется" }
+    ]
+  },
+  {
+    "id": 5,
+    "term": "Табличный интерфейс",
+    "description": "Способ организации визуального отображения и взаимодействия с данными в виде сетки, состоящей из строк и столбцов",
+    "source": "https://www.ibm.com/docs/ru/mci/7.6.2?topic=applications-interface-tables",
+    "relations": [
+      { "targetId": 6, "relationType": "используется для работы с" }
+    ]
+  },
+  {
+    "id": 6,
+    "term": "Большие данные",
+    "description": "Крупные массивы разнообразной информации и стек специальных технологий для работы с ней",
+    "source": "https://yandex.cloud/ru/docs/glossary/bigdata",
+    "relations": []
+  },
+  {
+    "id": 7,
+    "term": "Корпоративные данные",
+    "description": "Совокупность всех информационных ресурсов организации, которые создаются в процессе ее деятельности, используются для управления бизнес-процессами и имеют ценность для достижения целей компании",
+    "source": "https://rt-solar.ru/products/solar_dozor/blog/5638/",
+    "relations": [
+      { "targetId": 6, "relationType": "относятся к" }
+    ]
+  },
+  {
+    "id": 9,
+    "term": "Производительность веб-приложения",
+    "description": "Объективные измерения и пользовательские ощущения, связанные с загрузкой и работой веб-приложения",
+    "source": "https://developer.mozilla.org/ru/docs/Web/Performance",
+    "relations": [
+      { "targetId": 10, "relationType": "частный случай" }
+    ]
+  },
+  {
+    "id": 10,
+    "term": "Производительность BI-системы",
+    "description": "Скорость обработки, загрузки и визуализации больших объемов данных",
+    "source": "https://fanruan.ru/blog/razbor-mifov-chto-realno-opredelyaet-effektivnost-bi-sistem",
+    "relations": [
+      { "targetId": 16, "relationType": "влияет на" },
+      { "targetId": 19, "relationType": "оценивается с помощью" }
+    ]
+  },
+  {
+    "id": 16,
+    "term": "Пользовательский опыт",
+    "description": "Совокупность впечатлений и субъективных ощущений от взаимодействия с интерфейсом",
+    "source": "https://netology.ru/glossariy/polzovatelskiy-opyt",
+    "relations": [
+      { "targetId": 35, "relationType": "оценивается через" }
+    ]
+  },
+  {
+    "id": 18,
+    "term": "Метрика производительности",
+    "description": "Количественный показатель, используемый для измерения эффективности, скорости и стабильности работы системы",
+    "source": "https://ibs-qa.ru/media/metriki-proizvoditelnosti-kak-izmeryat-i-analizirovat-rezultaty-nagruzochnogo-testirovaniya/",
+    "relations": [
+      { "targetId": 10, "relationType": "используется для оценки" }
+    ]
+  },
+  {
+    "id": 19,
+    "term": "Стандартные метрики производительности",
+    "description": "Универсальные показатели, применяемые для оценки общей работоспособности систем",
+    "source": "https://ibs-qa.ru/media/metriki-proizvoditelnosti-kak-izmeryat-i-analizirovat-rezultaty-nagruzochnogo-testirovaniya/",
+    "relations": [
+      { "targetId": 21, "relationType": "включают" }
+    ]
+  },
+  {
+    "id": 21,
+    "term": "Core Web Vitals",
+    "description": "Набор метрик от Google, оценивающих реальный пользовательский опыт на сайте",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 22, "relationType": "включает" },
+      { "targetId": 23, "relationType": "включает" },
+      { "targetId": 24, "relationType": "включает" },
+      { "targetId": 10, "relationType": "используется для оценки" }
+    ]
+  },
+  {
+    "id": 22,
+    "term": "Largest Contentful Paint (LCP)",
+    "description": "Метрика Google Core Web Vitals, оценивающая время загрузки самого крупного и значимого элемента на веб-странице",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 33, "relationType": "характеризует" },
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 23,
+    "term": "Cumulative Layout Shift (CLS)",
+    "description": "Метрика Google Core Web Vitals, оценивающая сумму всех неожиданных сдвигов контента страницы",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 24,
+    "term": "Interaction to Next Paint (INP)",
+    "description": "Метрика Google Core Web Vitals, оценивающая задержку между действием пользователя и визуальным откликом браузера",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 25,
+    "term": "FPS (Frames Per Second)",
+    "description": "Показатель, определяющий количество сменяемых кадров на экране за одну секунду",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 10, "relationType": "характеризует" }
+    ]
+  },
+  {
+    "id": 26,
+    "term": "Потребление памяти (RAM)",
+    "description": "Объем временного хранилища, занимаемый обрабатываемыми данными",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 27,
+    "term": "Количество DOM-нод",
+    "description": "Количество тегов DOM-дерева, присутствующих на странице",
+    "source": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=ru",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 33,
+    "term": "Рендеринг",
+    "description": "Процесс преобразования кода в визуальный интерфейс",
+    "source": "https://habr.com/ru/articles/224187/",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 34,
+    "term": "Ререндеринг",
+    "description": "Повторный процесс отрисовки интерфейса при изменении данных",
+    "source": "https://habr.com/ru/articles/224187/",
+    "relations": [
+      { "targetId": 10, "relationType": "влияет на" }
+    ]
+  },
+  {
+    "id": 35,
+    "term": "Интегральный показатель",
+    "description": "Обобщенная, сводная характеристика, объединяющая множество показателей",
+    "source": "https://ria-stk.ru/mmq/adetail.php?ID=177621",
+    "relations": [
+      { "targetId": 10, "relationType": "агрегирует" },
+      { "targetId": 42, "relationType": "используется для" }
+    ]
+  },
+  {
+    "id": 42,
+    "term": "Ранжирование технологий",
+    "description": "Процесс упорядочивания технологий по уровню производительности",
+    "source": "https://neerc.ifmo.ru/wiki/index.php?title=%D0%A0%D0%B0%D0%BD%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+    "relations": []
+  }
+]
