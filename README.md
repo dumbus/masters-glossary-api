@@ -132,4 +132,4 @@ curl https://dumbus-web-tech.ru/api/terms
 - `PUT /api/terms/:id` — обновление термина
 - `DELETE /api/terms/:id` — удаление термина
 
-> Фронтент-часть: https://github.com/dumbus/masters-glossary-frontend
+> Frontend-часть: https://github.com/dumbus/masters-glossary-frontend
