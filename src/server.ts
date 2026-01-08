@@ -1,43 +1,13 @@
-import https from 'https';
 import http from 'http';
-import fs from 'fs';
 import app from './app';
 import config from './config/config';
 
-let server: http.Server | https.Server;
+const server = http.createServer(app);
+console.log(`HTTP Server running on port ${config.port}`);
 
-if (config.https.enabled) {
-  // Production mode with HTTPS
-  if (!config.https.certPath || !config.https.keyPath) {
-    console.error('SSL certificate paths are required in production mode');
-    console.error(
-      'Please set SSL_CERT_PATH and SSL_KEY_PATH environment variables',
-    );
-    process.exit(1);
-  }
-
-  try {
-    const options = {
-      cert: fs.readFileSync(config.https.certPath),
-      key: fs.readFileSync(config.https.keyPath),
-    };
-
-    server = https.createServer(options, app);
-    console.log(`HTTPS Server running on port ${config.port}`);
-  } catch (error) {
-    console.error('Failed to load SSL certificates:', error);
-    process.exit(1);
-  }
-} else {
-  // Development mode with HTTP
-  server = http.createServer(app);
-  console.log(`HTTP Server running on port ${config.port}`);
-}
-
-server.listen(config.port, () => {
-  const protocol = config.https.enabled ? 'https' : 'http';
+server.listen(config.port, '0.0.0.0', () => {
   console.log(
-    `Server running in ${config.nodeEnv} mode on ${protocol}://host:${config.port}`,
+    `Server running in ${config.nodeEnv} mode on http://${config.host}:${config.port}`,
   );
 });
 

@@ -1,29 +1,25 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 interface Config {
   port: number;
   nodeEnv: string;
-  https: {
-    enabled: boolean;
-    certPath?: string;
-    keyPath?: string;
-  };
+  host: string;
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
+const lifecycle = process.env.npm_lifecycle_event;
+
+// Определяем режим по имени npm-скрипта:
+// npm run dev   → development
+// npm start     → production
+const nodeEnv =
+  lifecycle === 'dev'
+    ? 'development'
+    : lifecycle === 'start'
+      ? 'production'
+      : 'development';
 
 const config: Config = {
-  port: isProduction
-    ? Number(process.env.PORT) || 443
-    : Number(process.env.PORT) || 3000,
-  nodeEnv: process.env.NODE_ENV || 'development',
-  https: {
-    enabled: isProduction,
-    certPath: process.env.SSL_CERT_PATH,
-    keyPath: process.env.SSL_KEY_PATH,
-  },
+  port: 8080,
+  nodeEnv,
+  host: nodeEnv === 'development' ? 'localhost' : 'your-host',
 };
 
 export default config;
