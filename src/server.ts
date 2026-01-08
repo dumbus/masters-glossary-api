@@ -3,7 +3,6 @@ import app from './app';
 import config from './config/config';
 
 const server = http.createServer(app);
-console.log(`HTTP Server running on port ${config.port}`);
 
 server.listen(config.port, '0.0.0.0', () => {
   console.log(
